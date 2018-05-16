@@ -1,40 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { storeInput } from '../reducer';
+import './Blue.css'
+import { storeInput, deleteString } from '../actionCreators';
 // import Green from './Green';
 
 class Blue extends Component {
-    // constructor(props){
-    //     super(props)
-    // }
-    render(){
-    let dataShow = this.props.data.map( (element, index) => {
-            console.log( element )
-            return (<h1 key={index}>{`Your string ${element}`}</h1>)
+    render() {
+        let dataShow = this.props.data.map((element, index) => {
+            // console.log(element)
+            return (<p key={element.id}>{`${element.text}`}
+                <button
+                    className='deleteButton'
+                    onClick={() => {
+                        // console.log(`Number to Cancel: ${element.id}`)
+                        this.props.deleteString(element.id);
+                    }}
+                >DeletePost</button></p>)
         })
-    return (
-        <div style={{ backgroundColor: 'blue' }} >
-            <button onClick={ this.props.storeInput }>Store Your String</button>
-            Blue
-            <div>
-                Data Area
+        return (
+            <div className='mainBlue' style={{ backgroundColor: 'blue' }} >
+                <button onClick={this.props.storeInput}>Store Your String</button>
+                <div>
+                    Data Area
             {dataShow}
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 }
 
-function mapStateToProps( state ) {
+function mapStateToProps(state) {
     return {
-    greenInput: state.greenInput,
-    data: state.data
+        greenInput: state.greenInput,
+        data: state.data
     }
 }
 
 const mapDispatchToProps = {
-    storeInput
+    storeInput,
+    deleteString
 }
 
 

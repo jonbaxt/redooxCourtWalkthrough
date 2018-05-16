@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { handleInputValue } from '../reducer';
+
+import './Green.css';
+import { handleInputValue } from '../actionCreators';
 // import { } from '../actionCreators';
 
 function Green(props) {
     return (
-        <div style={{ backgroundColor: 'green' }} >
-            Green
+        <div className='mainGreen' style={{ backgroundColor: 'green' }} >
+            <p>Please Write Anything to Be Stored:</p>
             <input
                 type='text'
                 placeholder='type in me'

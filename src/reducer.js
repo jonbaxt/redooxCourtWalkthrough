@@ -1,4 +1,5 @@
 // import actionCreators, {} from './actionCreators';
+// const { handleInputValue, storeInput } = require('./actionCreators');
 
 const initialState = {
     data: [],
@@ -9,21 +10,8 @@ const initialState = {
 //action types
 const INPUT_VALUE = 'INPUT_VALUE';
 const STORE_STRING = 'STORE_STRING';
-
-//action creators
-export function handleInputValue(value) {
-    // console.log(`you hit handleInputValue ${value}`);
-    return {
-        type: INPUT_VALUE,
-        payload: value
-    }
-}
-
-export function storeInput() {
-    return {
-        type: STORE_STRING
-    }
-}
+const DELETE_STRING = 'DELETE_STRING';
+let idnum = 1;
 
 
 //reducer
@@ -34,13 +22,18 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { greenInput: action.payload })
         case STORE_STRING:
             console.log(`Hit store string`)
-            return Object.assign(
-                {},
-                state,
-                {
-                    data: [ ...state.data, state.greenInput],
-                    greenInput: ''
-                })
+            const newStore = {
+                id: idnum++,
+                text: state.greenInput
+            }
+            return (Object.assign({}, state, {
+                data: [...state.data, newStore],
+                greenInput: ''
+            })
+            )
+        case DELETE_STRING:
+        return  Object.assign({}, state, { data: state.data.filter( element => element.id !== action.payload )})
+            // {console.log( indexNumber) 
         default:
             return state;
     }

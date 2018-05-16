@@ -1,0 +1,6 @@
+.mainRed{
+    width: 95%;
+    height: 50px;
+    display: flex;
+    align-items: flex-start;
+}

@@ -1,0 +1,9 @@
+.mainGreen{
+    width: 95%;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    color: white;
+    /* align-items: center; */
+}
