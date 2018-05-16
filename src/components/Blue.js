@@ -9,21 +9,25 @@ class Blue extends Component {
     render() {
         let dataShow = this.props.data.map((element, index) => {
             // console.log(element)
-            return (<p key={element.id}>{`${element.text}`}
-                <button
+            return (<p key={element.id} className='sentence'>
+                <button className='deleteButton'
                     className='deleteButton'
                     onClick={() => {
                         // console.log(`Number to Cancel: ${element.id}`)
                         this.props.deleteString(element.id);
                     }}
-                >DeletePost</button></p>)
+                >Delete</button>{`${element.text}`}</p>)
         })
         return (
-            <div className='mainBlue' style={{ backgroundColor: 'blue' }} >
-                <button onClick={this.props.storeInput}>Store Your String</button>
-                <div>
-                    Data Area
-            {dataShow}
+            <div className='mainBlue'>
+
+                <div className='buttonContainer'>
+                    <button onClick={this.props.storeInput}>Store Your String</button>
+                </div>
+
+                <div className='dataArea'>
+                    <h1>OUTPUT:</h1>
+                    {dataShow}
                 </div>
             </div>
         )

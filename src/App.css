@@ -3,4 +3,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background: #2C3E50;
+  height: 750px;
 }

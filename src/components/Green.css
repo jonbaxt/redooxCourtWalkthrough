@@ -1,9 +1,20 @@
 .mainGreen{
     width: 95%;
-    height: 75px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     font-weight: bolder;
+    background-color: #2C3E50;
     color: white;
+    border: solid 5px #2C3E50;
     /* align-items: center; */
+    align-items: center;
+}
+
+.inputBox{
+    width: 95%;
+    background-color: rgb(119, 139, 160);
+    border: none;
+    color: white;
+    font-size: 40px;
 }

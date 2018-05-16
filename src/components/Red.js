@@ -5,8 +5,10 @@ import './Red.css';
 
 function Red(props) {
     return (
-        <div className='mainRed' style={{ backgroundColor: 'red' }} >
-            <h2>{props.greenInput}</h2>
+        <div className='mainRed' >
+            <div className='inputOuterBox'>
+            <h2 className='input'>{props.greenInput}</h2>
+            </div>
         </div>
     )
 }

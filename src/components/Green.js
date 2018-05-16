@@ -7,13 +7,14 @@ import { handleInputValue } from '../actionCreators';
 
 function Green(props) {
     return (
-        <div className='mainGreen' style={{ backgroundColor: 'green' }} >
+        <div className='mainGreen' >
             <p>Please Write Anything to Be Stored:</p>
             <input
                 type='text'
-                placeholder='type in me'
+                placeholder='Type In Me'
                 onChange={(event) => { props.handleInputValue(event.target.value) }}
                 value={props.greenInput}
+                className='inputBox'
             />
         </div>
     )

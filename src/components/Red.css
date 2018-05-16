@@ -1,6 +1,15 @@
 .mainRed{
     width: 95%;
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: flex-start;
+    background: #F7F9F9;
+    border: solid 5px #2C3E50;
+    color: #2C3E50;
+    align-items: center;
+}
+
+.input{
+    margin-left: 20px;
+    margin-right: 20px;
 }
